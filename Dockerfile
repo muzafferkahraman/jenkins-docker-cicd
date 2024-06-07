@@ -1,7 +1,3 @@
-USER root
-RUN usermod -aG docker jenkins
-USER jenkins
-
 FROM python:3.9-alpine
 
 WORKDIR /flask_app
