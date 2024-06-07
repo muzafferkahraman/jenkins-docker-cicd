@@ -24,8 +24,8 @@ pipeline {
             ssh ${SSH_REMOTE_HOST} <<EOF
               docker stop my-flask-app || true
               docker rm my-flask-app || true
-              docker pull ${DOCKER_REPOSITORY}
-              docker run -d --name my-flask-app -p 5000:5000 ${DOCKER_REPOSITORY}
+              docker pull ${DOCKER_BFLASK_IMAGE}
+              docker run -d --name my-flask-app -p 5000:5000 ${DOCKER_BFLASK_IMAGE}
             EOF
           """
         }
